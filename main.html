@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script async crossorigin src="https://clerk.dev/static/clerk.js"></script>
+<script>
+  window.ClerkFrontendApi = "pk_test_Y29uY2lzZS1hYXJkdmFyay03Ni5jbGVyay5hY2NvdW50cy5kZXYk";
+</script>
+
   <meta charset="UTF-8">
   <title>MetaBrain Chat</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +15,17 @@
     import { createResponse, getAllResponses, reactToResponse } from './responsesApi.js';
     import { createMessage, getMessagesByChatId } from './messageApi.js';
   </script>
+
+<script async crossorigin src="https://clerk.dev/static/clerk.js"></script>
+<script>
+  window.ClerkFrontendApi = "pk_test_Y29uY2lzZS1hYXJkdmFyay03Ni5jbGVyay5hY2NvdW50cy5kZXYk";
+  window.addEventListener("load", async () => {
+    await Clerk.load();
+    if (!Clerk.session) {
+      window.location.href = "login.html";
+    }
+  });
+</script>
 </head>
 <body>
   <!-- Sidebar -->
