@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script async crossorigin src="https://clerk.dev/static/clerk.js"></script>
+<script>
+  window.ClerkFrontendApi = "pk_test_Y29uY2lzZS1hYXJkdmFyay03Ni5jbGVyay5hY2NvdW50cy5kZXYk";
+</script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>File Upload</title>
@@ -34,6 +39,17 @@
         .success { background-color: #dff0d8; color: #3c763d; }
         .error { background-color: #f2dede; color: #a94442; }
     </style>
+
+<script async crossorigin src="https://clerk.dev/static/clerk.js"></script>
+<script>
+  window.ClerkFrontendApi = "pk_test_Y29uY2lzZS1hYXJkdmFyay03Ni5jbGVyay5hY2NvdW50cy5kZXYk";
+  window.addEventListener("load", async () => {
+    await Clerk.load();
+    if (!Clerk.session) {
+      window.location.href = "login.html";
+    }
+  });
+</script>
 </head>
 <body>
     <div class="upload-container">
